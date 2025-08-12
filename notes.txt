@@ -1,0 +1,4 @@
+docker build --platform linux/amd64 -f Dockerfile.release --target artifact --output ./artifact .
+
+arn:aws:lambda:us-east-1:753240598075:layer:LambdaAdapterLayerX86:24
+AWS_LAMBDA_EXEC_WRAPPER=/opt/bootstrap
