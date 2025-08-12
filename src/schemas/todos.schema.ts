@@ -19,4 +19,4 @@ const todoDtoSchema = new mongoose.Schema({
   userId: { type: Types.ObjectId, required: true },
 });
 
-export const Todo = mongoose.model("Todo", todoDtoSchema);
+export const Todo = mongoose.model("Todo", todoDtoSchema, "todos");
