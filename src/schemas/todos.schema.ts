@@ -12,11 +12,14 @@ export const todoPostSchema = {
 } as const;
 export type TodoPostSchema = FromSchema<typeof todoPostSchema>;
 
-const todoDtoSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  isCompleted: { type: Boolean, default: false },
-  userId: { type: Types.ObjectId, required: true },
-});
+const todoDtoSchema = new mongoose.Schema(
+  {
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    isCompleted: { type: Boolean, default: false },
+    userId: { type: Types.ObjectId, required: true },
+  },
+  { strict: true },
+);
 
 export const Todo = mongoose.model("Todo", todoDtoSchema, "todos");
